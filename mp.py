@@ -29,8 +29,9 @@ total_calculos = multiprocessing.Value('i', 0)
 
 # Criar processos
 processes = []
+# recupera o número de cpus
 cpu = os.cpu_count()
-for i in range(4):
+for i in range(cpu):
     process = multiprocessing.Process(target=worker, args=(i, total_calculos))
     processes.append(process)
 

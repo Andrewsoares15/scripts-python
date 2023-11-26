@@ -29,7 +29,7 @@ total_calculos = multiprocessing.Value('i', 0)
 
 # Criar threads
 threads = []
-for i in range(4):
+for i in range(8):
     thread = threading.Thread(target=worker, args=(i, total_calculos))
     threads.append(thread)
 
